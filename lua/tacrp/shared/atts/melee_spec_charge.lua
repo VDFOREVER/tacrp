@@ -11,8 +11,6 @@ ATT.SortOrder = 5
 
 ATT.MeleeCharge = true
 
-ATT.Mult_MeleeRechargeRate = 0.8
-
 ATT.Override_NoBreathBar = true
 
 ATT.Hook_GetHintCapabilities = function(self, tbl)
@@ -25,9 +23,9 @@ local followup = 0.75
 local modecount = 3
 local modes = {
     --  {speed, duration, turnrate, damagemult, resistance}
-    [0] = {700, 1.5, 180, 1, 0.25},
-    [1] = {650, 1.5, 720, 0.5, 0},
-    [2] = {850, 1.5, 90, 1.25, 0.5},
+    [0] = {700, 1.5, 240, 1, 0.25},
+    [1] = {700, 1.5, 960, 0.75, 0},
+    [2] = {800, 1.5, 90, 1.25, 0.5},
 }
 
 local stat_vel = 1

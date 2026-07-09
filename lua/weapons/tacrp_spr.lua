@@ -29,8 +29,8 @@ SWEP.SlotAlt = 3
 
 SWEP.BalanceStats = {
     [TacRP.BALANCE_SBOX] = {
-        Damage_Max = 50,
-        Damage_Min = 70,
+        Damage_Max = 75,
+        Damage_Min = 85,
 
         Range_Min = 500,
         Range_Max = 1500,
@@ -117,7 +117,7 @@ SWEP.RPM = 54
 
 SWEP.Spread = 0
 
-SWEP.HipFireSpreadPenalty = 0.04
+SWEP.HipFireSpreadPenalty = 0.01
 SWEP.PeekPenaltyFraction = 0.25
 
 SWEP.RecoilPerShot = 1
@@ -126,9 +126,9 @@ SWEP.RecoilResetTime = 0.2
 SWEP.RecoilDissipationRate = 1
 SWEP.RecoilFirstShotMult = 1 // multiplier for the first shot's recoil amount
 
-SWEP.RecoilVisualKick = 5
+SWEP.RecoilVisualKick = 3
 
-SWEP.RecoilKick = 3
+SWEP.RecoilKick = 4
 
 SWEP.RecoilSpreadPenalty = 0 // extra spread per one unit of recoil
 
@@ -137,18 +137,18 @@ SWEP.CanBlindFire = true
 // handling
 
 SWEP.MoveSpeedMult = 0.9
-SWEP.ShootingSpeedMult = 0.7
-SWEP.SightedSpeedMult = 0.5
+SWEP.ShootingSpeedMult = 0.925
+SWEP.SightedSpeedMult = 0.95
 
 SWEP.ReloadSpeedMult = 0.3
 
-SWEP.AimDownSightsTime = 0.38
-SWEP.SprintToFireTime = 0.45
+SWEP.AimDownSightsTime = 0.3
+SWEP.SprintToFireTime = 0.4
 
 SWEP.Sway = 2
 SWEP.ScopedSway = 0.075
 
-SWEP.FreeAimMaxAngle = 9
+SWEP.FreeAimMaxAngle = 4
 
 // hold types
 
@@ -204,7 +204,7 @@ SWEP.Ammo = "357"
 SWEP.AmmoTTT = "357"
 SWEP.Ammo_Expanded = "ti_rifle"
 
-SWEP.ReloadTimeMult = 1
+SWEP.ReloadTimeMult = 0.8
 SWEP.ShootTimeMult = 0.75
 SWEP.DropMagazineModel = "models/weapons/tacint/magazines/uratio.mdl" // why doesn't it have its own mag model?
 

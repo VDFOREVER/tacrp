@@ -29,7 +29,7 @@ function ENT:Detonate(ent)
 
     local mult = TacRP.ConVars["mult_damage_explosive"]:GetFloat() * (self.NPCDamage and 0.25 or 1)
     util.BlastDamage(self, attacker, self:GetPos(), 350, 200 * mult)
-    self:ImpactTraceAttack(ent, 1000 * mult, 15000)
+    self:ImpactTraceAttack(ent, 1500 * mult, 15000)
 
     local fx = EffectData()
     fx:SetOrigin(self:GetPos())

@@ -304,6 +304,6 @@ end)
 
 hook.Add("PostEntityTakeDamage", "tacrp_fire_cloud", function(ent, dmginfo, took)
     if took and IsValid(dmginfo:GetInflictor()) and dmginfo:GetInflictor():GetClass() == "tacrp_fire_cloud" and !ent:IsPlayer() then
-        ent:Ignite(math.Rand(3, 5))
+        --ent:Ignite(math.Rand(3, 5))
     end
 end)

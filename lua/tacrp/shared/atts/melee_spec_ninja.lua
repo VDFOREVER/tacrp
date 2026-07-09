@@ -82,13 +82,18 @@ ATT.Hook_PreReload = function(wep)
             ply:SetVelocity(ang:Forward() * -math.max(100, 400 + 400 * wep:GetValue("MeleePerkAgi") - ply:GetVelocity():Length()))
         end
         ply:SetNWFloat("TacRPDiveTime", CurTime())
-    elseif !ply:IsOnGround() and ply:IsFlagSet(4) then
+    elseif !ply:IsOnGround() and ply:Crouching() then
         if ply:GetMoveType() != MOVETYPE_NOCLIP and !ply:GetNWBool("TacRPNinjaDive") and ply:GetNWFloat("TacRPDiveTime", 0) + 0.5 < CurTime() and ply:EyeAngles():Forward():Dot(Vector(0, 0, 1)) < -0.25 then
-            ply:SetNWBool("TacRPNinjaDive", true)
-            ply:SetNWFloat("TacRPDiveTime", CurTime())
-            ply:SetNWVector("TacRPDiveDir", ply:EyeAngles():Forward() * Lerp(getcharge(wep), 30000, 100000) * Lerp(wep:GetValue("MeleePerkAgi"), 0.6, 1.4))
-            wep:EmitSound("weapons/mortar/mortar_fire1.wav", 65, 120, 0.5)
-            setcharge(wep, 0)
+            local dir = ply:EyeAngles():Forward()
+
+            if dir:Dot(Vector(0, 0, 1)) < -0.25 then
+                ply:SetNWBool("TacRPNinjaDive", true)
+                ply:SetNWFloat("TacRPDiveTime", CurTime())
+
+                ply:SetNWVector("TacRPDiveDir", dir * Lerp(getcharge(wep), 30000, 100000) * Lerp(wep:GetValue("MeleePerkAgi"), 0.6, 1.4))
+                wep:EmitSound("weapons/mortar/mortar_fire1.wav", 65, 120, 0.5)
+                setcharge(wep, 0)
+            end
         end
     elseif !wep:StillWaiting() and getcharge(wep) >= cost then
         wep:SetNextSecondaryFire(CurTime() + 0.8)
@@ -210,7 +215,12 @@ hook.Add("FinishMove", "TacRP_Ninja", function(ply, mv)
         end
         if (ply:IsOnGround() and ply.TacRPNinjaGroundTime + engine.TickInterval() < CurTime()) or !ply:Alive() or ply:GetMoveType() == MOVETYPE_NOCLIP then
             ply:SetNWBool("TacRPNinjaDive", false)
-            mv:SetVelocity(mv:GetAngles():Forward() * mv:GetVelocity():Length() * 2)
+
+            local fwd = mv:GetAngles():Forward()
+            fwd.z = 0
+            fwd:Normalize()
+            mv:SetVelocity(fwd * mv:GetVelocity():Length() * 2)
+
             ply.TacRPNinjaGroundTime = nil
         elseif ply:GetNWFloat("TacRPDiveTime", 0) + 0.1 > CurTime() then
             mv:SetVelocity(ply:GetNWVector("TacRPDiveDir") * FrameTime())

@@ -84,7 +84,7 @@ function ENT:Detonate()
         end
     end
 
-    local mult = TacRP.ConVars["mult_damage_explosive"]:GetFloat()
+    local mult = TacRP.ConVars["mult_damage_explosive"]:GetFloat() * 0.5
 
     self:FireBullets({
         Attacker = attacker,

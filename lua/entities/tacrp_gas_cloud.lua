@@ -139,7 +139,16 @@ function ENT:Think()
 
                 dmg:SetDamage(math.Rand(3, 6))
 
-                if k:IsPlayer() and TacRP.ConVars["gas_affectplayers"]:GetBool() then
+                local in_gasmask = false
+                if k.EZarmor and k.EZarmor.items then
+                    for _, armorData in pairs(k.EZarmor.items) do
+                        if armorData.name == "GasMask" then
+                            in_gasmask = true
+                        end
+                    end
+                end
+
+                if k:IsPlayer() and TacRP.ConVars["gas_affectplayers"]:GetBool() and not in_gasmask then
                     k:TakeDamageInfo(dmg)
 
                     local timername = "tacrp_gas_" .. k:EntIndex()

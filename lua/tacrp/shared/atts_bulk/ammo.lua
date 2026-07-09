@@ -367,7 +367,7 @@ ATT.Description = "att.ammo_amr_hv.desc"
 ATT.Pros = {"stat.range", "stat.muzzlevelocity"}
 ATT.Cons = {"stat.damage_max"}
 
-ATT.Category = {"ammo_amr", "ammo_sniper"}
+ATT.Category = {"ammo_amr", "ammo_sniper", "ammo_ai"}
 
 ATT.SortOrder = 2.5
 
@@ -395,7 +395,7 @@ ATT.Description = "att.ammo_amr_ratshot.desc"
 ATT.Pros = {"att.procon.moreproj", "rating.maneuvering"}
 ATT.Cons = {"stat.damage", "stat.range", "stat.spread"}
 
-ATT.Category = {"ammo_amr"}
+ATT.Category = {"ammo_amr", "ammo_ai"}
 
 ATT.SortOrder = 5
 
@@ -1250,7 +1250,7 @@ ATT.Icon = Material("entities/tacrp_att_acc_surplus.png", "mips smooth")
 ATT.Description = "att.ammo_surplus_bullet.desc"
 ATT.Pros = {"att.procon.refund", "stat.recoil"}
 ATT.Cons = {"att.procon.unreliable"}
-ATT.Category = {"ammo_rifle", "ammo_sniper", "ammo_pistol", "ammo_amr", "ammo_rifle_sub", "ammo_pistol_sub"}
+ATT.Category = {"ammo_rifle", "ammo_sniper", "ammo_pistol", "ammo_amr", "ammo_rifle_sub", "ammo_pistol_sub", "ammo_ai"}
 
 ATT.SortOrder = 999
 
@@ -1320,7 +1320,7 @@ ATT.Icon = Material("entities/tacrp_att_acc_tmj.png", "mips smooth")
 ATT.Description = "att.ammo_tmj.desc"
 ATT.Pros = {"att.procon.armor", "stat.penetration"}
 ATT.Cons = {"stat.recoilfirstshot", "stat.recoilmaximum"}
-ATT.Category = {"ammo_rifle", "ammo_sniper", "ammo_amr", "ammo_rifle_sub"}
+ATT.Category = {"ammo_rifle", "ammo_sniper", "ammo_amr", "ammo_rifle_sub", "ammo_ai"}
 
 ATT.SortOrder = 1.5
 
