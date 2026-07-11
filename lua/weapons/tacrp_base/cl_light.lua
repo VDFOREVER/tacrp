@@ -203,9 +203,20 @@ function SWEP:DrawFlashlightGlare(pos, ang, strength, dot)
     strength = strength or 1
 
     local diff = EyePos() - pos
-    local wep = LocalPlayer():GetActiveWeapon()
+    local ply = LocalPlayer()
+    local wep = ply:GetActiveWeapon()
+
+    local in_glass = false
+    if ply.EZarmor and ply.EZarmor.items then
+        for _, armorData in pairs(ply.EZarmor.items) do
+            if armorData.name == "SunGlasses" then
+                in_glass = true
+            end
+        end
+    end
+    
     --local dot = math.Clamp((-ang:Forward():Dot(EyeAngles():Forward()) - 0.707) / (1 - 0.707), 0, 1) ^ 2
-    if TacRP.ConVars["flashlight_blind"]:GetBool() then
+    if not in_glass and TacRP.ConVars["flashlight_blind"]:GetBool() then
         dot = dot ^ 4
         local tr = util.QuickTrace(pos, diff, {self:GetOwner(), LocalPlayer()})
         local s = math.Clamp(1 - diff:Length() / 328, 0, 1) ^ 1 * dot * 2000 * math.Rand(0.95, 1.05)
