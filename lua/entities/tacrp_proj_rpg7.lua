@@ -15,7 +15,7 @@ ENT.ImpactFuse = true // projectile explodes on impact.
 ENT.ExplodeOnDamage = true
 ENT.ExplodeUnderwater = true
 
-ENT.SafetyFuse = 0.075
+ENT.SafetyFuse = 0.02
 ENT.ImpactDamage = 150
 
 ENT.AudioLoop = "TacRP/weapons/rpg7/rocket_flight-1.wav"

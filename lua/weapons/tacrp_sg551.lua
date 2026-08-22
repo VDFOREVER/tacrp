@@ -34,7 +34,7 @@ SWEP.BalanceStats = {
         RPM = 800,
 
         BodyDamageMultipliers = {
-            [HITGROUP_HEAD] = 6,
+            [HITGROUP_HEAD] = 5.5,
             [HITGROUP_CHEST] = 1,
             [HITGROUP_STOMACH] = 1.25,
             [HITGROUP_LEFTARM] = 1,
@@ -85,7 +85,7 @@ SWEP.TTTReplace = TacRP.TTTReplacePreset.AssaultRifle
 SWEP.Damage_Max = 28
 SWEP.Damage_Min = 18
 SWEP.Range_Min = 1100 // distance for which to maintain maximum damage
-SWEP.Range_Max = 4000 // distance at which we drop to minimum damage
+SWEP.Range_Max = 3500 // distance at which we drop to minimum damage
 SWEP.Penetration = 8 // units of metal this weapon can penetrate
 SWEP.ArmorPenetration = 0.8
 

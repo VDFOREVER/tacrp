@@ -72,7 +72,7 @@ function SWEP:DoRT()
         angles = angles,
         origin = origin,
         drawviewmodel = false,
-        fov = 40,
+        fov = 100,
         znear = 6
     }
 
@@ -188,8 +188,8 @@ function SWEP:DoCornershot()
 
     if !self:GetBlindFire() and !IsValid(self:GetCornershotEntity()) then lastblindfire = false return end
 
-    local w = TacRP.SS(640 / 4)
-    local h = TacRP.SS(480 / 4)
+    local w = TacRP.SS(960 / 4)
+    local h = TacRP.SS(720 / 4)
     local x = (ScrW() - w) / 2
     local y = (ScrH() - h) / 2
     -- y = y + (ScrH() / 4)
