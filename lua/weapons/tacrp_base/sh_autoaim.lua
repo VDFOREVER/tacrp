@@ -39,7 +39,7 @@ function SWEP:ThinkLockOn()
                     ignoreworld = true,
                     filter = function(target)
                         if target == owner then return false end
-                        if target:IsPlayer() then return true end
+                        if target:IsPlayer() then return false end
                         if (target:IsNPC() or target:IsNextBot()) then return true end
                         if (target.LVS and target:GetHP() > 0) or target.Targetable then return true end
                         if target.IsGlideVehicle then return true end
